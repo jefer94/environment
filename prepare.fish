@@ -5,8 +5,12 @@ echo "install base devel"
 sudo pacman -S base-devel --needed
 
 # powerline fonts
-echo "install powerline fonts"
-sudo pacman -S powerline-fonts --needed
+#echo "install powerline fonts"
+#sudo pacman -S powerline-fonts --needed
+
+# dejavu sans mono for powerline
+echo "install dejavu sans mono for powerline"
+yaourt -S ttf-dejavu-sans-mono-powerline-git
 
 # tmux with ncurses
 yaourt -S tmux-git --needed

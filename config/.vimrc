@@ -12,8 +12,6 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 set noshowmode 
-"sudo.
-"cmap w!! %!sudo tee > /dev/null %
 map <C-c> "+y<CR>
 map <C-v> "+P<CR>
 set ruler
