@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-# global variables
+# AUR manager
 set AUR pacaur
 # set AUR yaourt
 
@@ -16,9 +16,14 @@ sudo pacman -S base-devel --needed --noconfirm
 echo "install dejavu sans mono for powerline"
 eval $AUR -S ttf-dejavu-sans-mono-powerline-git --needed --noconfirm
 
+# themes
+eval $AUR -S paper-icon-theme-git paper-gtk-theme-git --needed --noconfirm
+eval $AUR -S flatplat-theme --needed --noconfirm
+
 # tmux with ncurses
-echo "compile tmux with ncurses"
-eval $AUR -S ncurses tmux-git --needed --noconfirm
+eval $AUR -S tmux-git --needed --noconfirm
+eval $AUR -S yabar-git --needed --noconfirm
+eval $AUR -S i3-gaps-git --needed --noconfirm
 
 # oh my fish
 echo "install oh my fish"
