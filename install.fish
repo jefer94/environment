@@ -7,7 +7,7 @@ set CONFIG $PWD/config
 
 # backup
 echo "backup configs in $BACKUP"
-mkdir .backup/
+mkdir $BACKUP
 cp ~/.vimrc $BACKUP/.vimrc
 cp ~/.tmux.conf $BACKUP/.tmux.conf
 cp ~/.config/tilda/config_0 $BACKUP/config_0

@@ -1,19 +1,24 @@
 #!/usr/bin/fish
 
+# global variables
+set AUR pacaur
+# set AUR yaourt
+
 # base devel
 echo "install base devel"
-sudo pacman -S base-devel --needed
+sudo pacman -S base-devel --needed --noconfirm
 
 # powerline fonts
-#echo "install powerline fonts"
-#sudo pacman -S powerline-fonts --needed
+# echo "install powerline fonts"
+# sudo pacman -S powerline-fonts --needed --noconfirm
 
 # dejavu sans mono for powerline
 echo "install dejavu sans mono for powerline"
-yaourt -S ttf-dejavu-sans-mono-powerline-git
+eval $AUR -S ttf-dejavu-sans-mono-powerline-git --needed --noconfirm
 
 # tmux with ncurses
-yaourt -S tmux-git --needed
+echo "compile tmux with ncurses"
+eval $AUR -S ncurses tmux-git --needed --noconfirm
 
 # oh my fish
 echo "install oh my fish"
