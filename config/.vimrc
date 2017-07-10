@@ -1,6 +1,11 @@
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
+set backupcopy=yes
+set nocompatible
+set autoread
+set ruler
+set showcmd
 set nu
 set t_Co=256
 colorscheme onedark
@@ -14,7 +19,6 @@ let g:mapleader = ","
 set noshowmode 
 map <C-c> "+y<CR>
 map <C-v> "+P<CR>
-set ruler
 set magic
 "set encoding = utf8
 
@@ -40,11 +44,9 @@ let g:airline_powerline_fonts = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|codemirror)$',
+  \ 'file': '\v\.(exe|so|dll|swp1|swo)$',
   \ }"
 "
 set statusline+=%#warningmsg#
@@ -57,3 +59,16 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 map <F8> :NERDTreeToggle<CR>
+
+" Indent
+set ai
+set si
+"
+" Show invisibles
+set listchars=eol:¬,tab:▸\ ,trail:·
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" Show line number and listchars
+set list
+set nu

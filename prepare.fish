@@ -1,8 +1,12 @@
 #!/usr/bin/fish
 
+# AUR manager
+set AUR pacaur
+# set AUR yaourt
+
 # base devel
 echo "install base devel"
-sudo pacman -S base-devel --needed
+sudo pacman -S base-devel --needed --noconfirm
 
 # powerline fonts
 #echo "install powerline fonts"
@@ -10,10 +14,16 @@ sudo pacman -S base-devel --needed
 
 # dejavu sans mono for powerline
 echo "install dejavu sans mono for powerline"
-yaourt -S ttf-dejavu-sans-mono-powerline-git
+eval $AUR -S ttf-dejavu-sans-mono-powerline-git --needed --noconfirm
+
+# themes
+eval $AUR -S paper-icon-theme-git paper-gtk-theme-git --needed --noconfirm
+eval $AUR -S flatplat-theme --needed --noconfirm
 
 # tmux with ncurses
-yaourt -S tmux-git --needed
+eval $AUR -S tmux-git --needed --noconfirm
+eval $AUR -S yabar-git --needed --noconfirm
+eval $AUR -S i3-gaps-git --needed --noconfirm
 
 # oh my fish
 echo "install oh my fish"
